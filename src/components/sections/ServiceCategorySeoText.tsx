@@ -22,7 +22,7 @@ export function ServiceCategorySeoText({ data }: ServiceCategorySeoTextProps) {
                 {card.title.map((segment, segmentIndex) => (
                   <span
                     key={`${segment.text}-${segmentIndex}`}
-                    className={segment.accent ? 'text-[#004F9E]' : undefined}
+                    className={'accent' in segment && segment.accent ? 'text-[#004F9E]' : undefined}
                   >
                     {segment.text}
                   </span>

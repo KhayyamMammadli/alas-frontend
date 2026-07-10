@@ -1,6 +1,7 @@
 import { homePageData, serviceCategoryPageData } from '../data/homePageData';
 import { ServiceCategoryBanner } from '../components/sections/ServiceCategoryBanner';
 import { ServiceCategoryIntro } from '../components/sections/ServiceCategoryIntro';
+import { RepairProcess } from '../components/sections/RepairProcess';
 import { ApplianceServices } from '../components/sections/ApplianceServices';
 import { MembershipPlans } from '../components/sections/MembershipPlans';
 import { CitiesWeServe } from '../components/sections/CitiesWeServe';
@@ -13,6 +14,7 @@ export function ServicesPage() {
       <ServiceCategoryBanner data={serviceCategoryPageData.banner} />
       <ServiceCategoryIntro data={serviceCategoryPageData.intro} />
       <ApplianceServices data={homePageData.applianceServices} />
+      <RepairProcess data={serviceCategoryPageData.repairProcess} />
       <MembershipPlans data={homePageData.membershipPlans} />
       <CitiesWeServe data={serviceCategoryPageData.citiesWeServe} />
       <ServiceCategorySeoText data={serviceCategoryPageData.seoTextArea} />

@@ -290,13 +290,15 @@ export const serviceCategoryPageData = {
   banner: {
     exactImage: asset('figma-category-banner-exact.png'),
     exactMobileImage: asset('figma-category-banner-mobile-exact.png'),
-    backgroundImage: asset('hero-bg.png'),
-    heroVisual: asset('figma-category-hero-visual.png'),
+    backgroundImage: asset('figma-category-hero-bg-desktop-clean.png'),
+    mobileBackgroundImage: asset('figma-category-hero-bg-mobile-clean.png'),
+    heroVisual: asset('figma-category-hero-person-fridge.png'),
     icons: {
       star: asset('figma-icon-star.png'),
       check: asset('figma-icon-check.png'),
-      clock: asset('figma-icon-clock.png'),
-      pin: asset('figma-icon-pin.png'),
+      clock: asset('figma-breadcrumb-clock.svg'),
+      pin: asset('figma-breadcrumb-pin.svg'),
+      calendar: asset('figma-category-calendar-icon.svg'),
     },
     breadcrumbs: ['Home', 'Locations', 'Refrigerator Repair'],
     rating: '4.9 Average Rating',
@@ -313,6 +315,7 @@ export const serviceCategoryPageData = {
   },
   intro: {
     title: 'Complete Appliance Repair — Residential and Commercial',
+    mobileTitle: 'Trusted Refrigerator Repair Services in Plano',
     description: [
       { text: 'For Plano homeowners and businesses, we provide fast-response refrigerator repair for all major brands and ' },
       { text: 'models. Our experienced technicians deliver reliable repairs backed by a 90-day warranty. Whether you need ' },
@@ -324,29 +327,29 @@ export const serviceCategoryPageData = {
     ],
     cards: [
       {
-        iconSrc: asset('figma-intro-icon-same-day.png'),
+        iconSrc: asset('figma-intro-service-icon-same-day.svg'),
         title: 'Same Day',
         description: 'Service Available',
       },
       {
-        iconSrc: asset('figma-intro-icon-warranty.png'),
+        iconSrc: asset('figma-intro-service-icon-warranty.svg'),
         title: '90 Days',
         description: 'Parts & Labor Warranty',
       },
       {
-        iconSrc: asset('figma-intro-icon-pricing.png'),
+        iconSrc: asset('figma-intro-service-icon-pricing.svg'),
         title: 'Upfront',
         description: 'Pricing — No Hidden Fees',
       },
       {
-        iconSrc: asset('figma-intro-icon-plano.png'),
+        iconSrc: asset('figma-intro-service-icon-plano.svg'),
         title: 'All Plano',
         description: 'Neighborhoods Covered',
       },
     ],
   },
   repairProcess: {
-    backgroundImage: asset('figma-repair-process-left.png'),
+    backgroundImage: asset('figma-repair-process-bg.png'),
     mobileImage: asset('figma-repair-process-mobile-exact.png'),
     title: 'Most Repairs Completed in 1-2 Hours',
     description:
@@ -354,30 +357,30 @@ export const serviceCategoryPageData = {
     action: 'Get Same-Day Service',
     steps: [
       {
-        markerIcon: asset('figma-process-step-1.png'),
+        markerIcon: asset('figma-repair-step-1.png'),
         title: 'Schedule Your Appointment',
         description: 'Call us or book online. We offer same-day appointments and flexible time windows to fit your schedule.',
       },
       {
-        markerIcon: asset('figma-process-step-2.png'),
+        markerIcon: asset('figma-repair-step-2.png'),
         title: 'Technician Arrives',
         description:
           'Our certified technician will arrive during your scheduled window with all necessary tools and common parts.',
       },
       {
-        markerIcon: asset('figma-process-step-3.png'),
+        markerIcon: asset('figma-repair-step-3.png'),
         title: 'Diagnosis & Quote',
         description:
           "We'll thoroughly inspect your refrigerator, identify the problem, and provide a clear, upfront quote for the repair.",
       },
       {
-        markerIcon: asset('figma-process-step-4.png'),
+        markerIcon: asset('figma-repair-step-4.png'),
         title: 'Complete Repair',
         description:
           "Once you approve the quote, we'll complete the repair using quality parts and test everything thoroughly.",
       },
       {
-        markerIcon: asset('figma-process-step-5.png'),
+        markerIcon: asset('figma-repair-step-5.png'),
         title: 'Final Walkthrough',
         description:
           "We'll explain the work completed, answer your questions, and provide care recommendations.",

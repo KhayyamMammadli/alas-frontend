@@ -46,7 +46,7 @@ export function ServiceCategoryQuestions({ data }: ServiceCategoryQuestionsProps
       <div className="mx-auto w-full max-w-[345px] md:hidden">
         <h2 className="text-center text-[32px] font-bold leading-[50px] text-[#090A0A]">
           {data.mobile.title.map((segment, index) => (
-            <span key={`${segment.text}-${index}`} className={segment.accent ? 'text-[#0A73D9]' : undefined}>
+            <span key={`${segment.text}-${index}`} className={'accent' in segment && segment.accent ? 'text-[#0A73D9]' : undefined}>
               {segment.text}
             </span>
           ))}

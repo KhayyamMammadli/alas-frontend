@@ -1,0 +1,25 @@
+<svg width="1440" height="700" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="700" fill="url(#heroGradient)"/>
+  <circle cx="1046" cy="176" r="128" stroke="white" stroke-opacity="0.05" stroke-width="2"/>
+  <rect x="40" y="90" width="384" height="384" stroke="white" stroke-opacity="0.05" stroke-width="2"/>
+  <image href="/assets/figma-category-hero-person-fridge.png" x="888" y="-8" width="472.307" height="708" preserveAspectRatio="xMidYMid meet"/>
+  <defs>
+    <linearGradient id="heroGradient" x1="185.5" y1="899.5" x2="1283.5" y2="-282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000A14"/>
+      <stop offset="0.071429" stop-color="#000F1E"/>
+      <stop offset="0.14286" stop-color="#001529"/>
+      <stop offset="0.21429" stop-color="#001B35"/>
+      <stop offset="0.28571" stop-color="#002141"/>
+      <stop offset="0.35714" stop-color="#00274D"/>
+      <stop offset="0.42857" stop-color="#002D59"/>
+      <stop offset="0.5" stop-color="#003366"/>
+      <stop offset="0.57143" stop-color="#002D59"/>
+      <stop offset="0.64286" stop-color="#00274D"/>
+      <stop offset="0.71429" stop-color="#002141"/>
+      <stop offset="0.78571" stop-color="#001B35"/>
+      <stop offset="0.85714" stop-color="#001529"/>
+      <stop offset="0.92857" stop-color="#000F1E"/>
+      <stop offset="1" stop-color="#000A14"/>
+    </linearGradient>
+  </defs>
+</svg>

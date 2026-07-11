@@ -4,6 +4,12 @@ type FooterProps = {
   data: HomePageData['footer'];
 };
 
+const socialLinks = [
+  { label: 'Facebook', icon: '/assets/figma-footer-facebook.svg', href: '#' },
+  { label: 'Instagram', icon: '/assets/figma-footer-instagram.svg', href: '#' },
+  { label: 'LinkedIn', icon: '/assets/figma-footer-linkedin.svg', href: '#' },
+];
+
 export function Footer({ data }: FooterProps) {
   const serviceLinks = data.services.map((item) => ({
     label: item,
@@ -21,56 +27,54 @@ export function Footer({ data }: FooterProps) {
   }));
 
   return (
-    <footer className="mt-24 bg-[#0A1628] px-4 pb-8 pt-16 text-white md:mt-[29px] md:h-[512px] md:px-10 xl:px-20">
-      <div className="mx-auto max-w-[1280px]">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <img src={data.logo} alt="ALAS" className="h-[54px] w-[185px] object-contain" />
-            <p className="mt-4 max-w-[285px] text-sm leading-[1.6] text-[#D1D5DC]">{data.description}</p>
-            <div className="mt-4 flex gap-3">
-              {['f', 'x', 'in'].map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex size-10 items-center justify-center rounded-lg bg-white/10 text-sm font-bold"
-                  aria-hidden="true"
-                >
-                  {item}
-                </span>
+    <footer className="h-[1056px] overflow-hidden bg-[#0A1628] px-5 pt-[50px] text-white xl:h-[466px] xl:px-20 xl:pb-0 xl:pt-16">
+      <div className="mx-auto w-full max-w-[1280px]">
+        <div className="flex flex-col items-start gap-8 xl:grid xl:h-[232px] xl:grid-cols-4 xl:gap-8">
+          <section className="flex h-[232px] w-full flex-col items-start gap-4">
+            <img src="/assets/figma-footer-logo.png" alt="ALAS Appliance Services" className="h-[54.481px] w-[185px] object-cover" />
+            <p className="h-[60px] w-full max-w-[353px] text-[14px] font-normal leading-[1.6] text-[#D1D5DC] xl:max-w-[285px]">{data.description}</p>
+            <div className="flex h-10 items-start gap-3">
+              {socialLinks.map((item) => (
+                <a key={item.label} href={item.href} aria-label={item.label} className="flex size-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20">
+                  <img src={item.icon} alt="" className="size-5" />
+                </a>
               ))}
             </div>
-          </div>
+          </section>
 
           <FooterColumn title="Services" items={serviceLinks} />
           <FooterColumn title="Company" items={companyLinks} />
 
-          <div>
-            <h3 className="text-lg font-bold leading-[1.6]">Contact</h3>
-            <div className="mt-4 flex flex-col gap-3 text-sm leading-[1.6] text-[#D1D5DC]">
-              <div>
-                <a href="tel:+14696383215" className="font-semibold">
-                  {data.contact.phone}
-                </a>
-                <p className="text-xs text-[#99A1AF]">{data.contact.support}</p>
-              </div>
-              <a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
-              <div>
-                {data.contact.coverage.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-            </div>
-          </div>
+          <section className="flex h-[232px] w-full flex-col items-start gap-4">
+            <h3 className="h-7 text-[18px] font-bold leading-[1.6] text-white">Contact</h3>
+            <ul className="flex w-full flex-col items-start gap-3 text-[14px] font-normal leading-[1.6] text-[#D1D5DC]">
+              <li className="flex h-10 items-start gap-2">
+                <img src="/assets/figma-footer-phone.svg" alt="" className="mt-0.5 size-5 shrink-0" />
+                <div className="h-10">
+                  <a href="tel:+18005551234" className="block h-5 font-semibold leading-5">{data.contact.phone}</a>
+                  <span className="block text-[12px] font-normal leading-[1.6] text-[#99A1AF]">{data.contact.support}</span>
+                </div>
+              </li>
+              <li className="flex h-[22px] items-start gap-2">
+                <img src="/assets/figma-footer-email.svg" alt="" className="mt-0.5 size-5 shrink-0" />
+                <a href={`mailto:${data.contact.email}`} className="leading-5">{data.contact.email}</a>
+              </li>
+              <li className="flex min-h-10 items-start gap-2">
+                <img src="/assets/figma-footer-location.svg" alt="" className="mt-0.5 size-5 shrink-0" />
+                <span className="whitespace-nowrap leading-5 xl:whitespace-normal">
+                  <span>{data.contact.coverage[0]}</span>
+                  <span className="ml-1 xl:ml-0 xl:block">{data.contact.coverage[1]}</span>
+                </span>
+              </li>
+            </ul>
+          </section>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-[#364153] pt-8 text-sm leading-[1.6] text-[#99A1AF] md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 hidden h-[55.398px] items-start justify-between border-t border-[#364153] pt-8 text-[14px] font-normal leading-[1.6] text-[#99A1AF] xl:flex">
           <p>{data.copyright}</p>
-          <div className="flex flex-wrap gap-6">
-            {data.legal.map((item) => (
-              <span key={item} className="text-[#99A1AF]">
-                {item}
-              </span>
-            ))}
-          </div>
+          <nav aria-label="Legal links" className="flex items-start gap-6">
+            {data.legal.map((item) => <a key={item} href="#" className="text-[#99A1AF]">{item}</a>)}
+          </nav>
         </div>
       </div>
     </footer>
@@ -79,17 +83,15 @@ export function Footer({ data }: FooterProps) {
 
 function FooterColumn({ title, items }: { title: string; items: readonly { label: string; href: string }[] }) {
   return (
-    <div>
-      <h3 className="text-lg font-bold leading-[1.6]">{title}</h3>
-      <ul className="mt-4 flex flex-col gap-2 text-sm font-medium leading-[1.48] text-[#D1D5DC]">
+    <section className="flex h-[232px] w-full flex-col items-start gap-4">
+      <h3 className="h-7 text-[18px] font-bold leading-[1.6] text-white">{title}</h3>
+      <ul className="flex h-[188px] flex-col items-start gap-2 text-[14px] font-medium leading-[1.48] text-[#D1D5DC]">
         {items.map((item) => (
-          <li key={item.label}>
-            <a href={item.href} className={item.label.includes('24/7') ? 'text-[#A6A6A6]' : undefined}>
-              {item.label}
-            </a>
+          <li key={item.label} className="h-5">
+            <a href={item.href} className={item.label.includes('24/7') ? 'text-[#A6A6A6]' : 'transition-colors hover:text-white'}>{item.label}</a>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

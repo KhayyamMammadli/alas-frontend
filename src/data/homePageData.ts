@@ -7,15 +7,17 @@ export const homePageData = {
     expert: {
       avatar: asset('avatar.png'),
       label: 'Talk to an expert',
-      phone: '(469) 638-3215',
+      phone: '(800) 555-1234',
     },
     cta: 'Schedule Service',
   },
   hero: {
-    backgroundImage: asset('hero-bg.png'),
-    technicianImages: [asset('hero-tech-main.png'), asset('hero-tech-side.png')],
-    whatsappIcon: asset('whatsapp.svg'),
+    backgroundImage: asset('figma-home-hero-bg-desktop.png'),
+    mobileBackgroundImage: asset('figma-home-hero-bg-mobile.png'),
+    technicianImages: [asset('figma-home-hero-tech-primary.png'), asset('figma-home-hero-tech-secondary.png')],
+    whatsappIcon: asset('figma-home-hero-whatsapp.svg'),
     title: 'Same-Day Appliance Repair Near You & Prevent Your Breakdowns',
+    mobileTitle: 'Appliance Repair & Protection Plans You Can Trust',
     description:
       'Fast, reliable service for homeowners and businesses. Enter your ZIP code to connect with a local technician.',
     badges: ['Same-Day Service', '90-Day Warranty', 'Licensed & Insured'],
@@ -98,7 +100,8 @@ export const homePageData = {
   },
   whyChooseUs: {
     title: 'Why Customers Choose Us',
-    quoteIcon: asset('quote-icon.png'),
+    quoteIcon: asset('figma-why-quote.svg'),
+    starIcon: asset('figma-why-star.svg'),
     features: [
       {
         title: 'Fast Response Across Plano',
@@ -111,9 +114,9 @@ export const homePageData = {
           'Fully licensed and insured technicians familiar with North Texas homes and commercial facilities — all major brands.',
       },
       {
-        title: 'Major Brand Experience',
+        title: 'Licensed, Experienced Technicians',
         description:
-          'Service support for popular appliance brands, including kitchen, laundry, refrigeration, and cooking equipment.',
+          'Fully licensed and insured technicians familiar with Plano homes and commercial facilities — all major brands.',
       },
       {
         title: '90-Day Repair Warranty',
@@ -125,16 +128,14 @@ export const homePageData = {
       {
         name: 'Niesha Phips',
         service: 'Refrigerator Repair',
-        avatar: asset('quote-avatar.png'),
-        quote:
-          'The technician arrived on time, explained the refrigerator issue clearly, and completed the repair the same day.',
+        avatar: asset('figma-why-avatar.png'),
+        quote: 'There are many variations of passage available the majority have suffered of alteration of the some humour words look even slightly form by the injected to default model believable.',
       },
       {
         name: 'Niesha Phips',
         service: 'Refrigerator Repair',
-        avatar: asset('quote-avatar.png'),
-        quote:
-          'Scheduling was simple and the service team helped us get our dishwasher working again without a long wait.',
+        avatar: asset('figma-why-avatar.png'),
+        quote: 'There are many variations of passage available the majority have suffered of alteration of the some humour words look even slightly form by the injected to default model believable.',
       },
     ],
   },
@@ -143,7 +144,7 @@ export const homePageData = {
     benefits: ['Priority Scheduling', 'Preventive Maintenance', 'Dedicated Support'],
     plans: [
       {
-        icon: asset('house.svg'),
+        icon: asset('figma-plan-house.svg'),
         title: 'Residential Membership',
         description:
           'Protect your home appliances with scheduled maintenance, priority service, and repair discounts — so a broken washer never ruins your week.',
@@ -152,21 +153,22 @@ export const homePageData = {
         accent: 'blue',
       },
       {
-        icon: asset('building.svg'),
+        icon: asset('figma-plan-building.svg'),
         title: 'Commercial Membership',
         description:
-          'Keep business-critical equipment covered with preventive maintenance, priority dispatch, and repair support for refrigeration, laundry, cooking, and HVAC systems.',
-        items: ['Priority dispatch', 'Preventive inspections', 'Commercial equipment support', 'Multi-location coverage'],
+          'Protect your home appliances with scheduled maintenance, priority service, and repair discounts — so a broken washer never ruins your week.',
+        items: ['No service fees', 'No deductibles', 'Local technicians', 'Same-day service'],
         action: 'View Commercial Plans',
         accent: 'orange',
       },
     ],
   },
   findTechnician: {
-    backgroundImage: asset('find-tech-bg.png'),
+    backgroundImage: asset('figma-find-tech-bg-desktop.png'),
+    mobileBackgroundImage: asset('figma-find-tech-bg-mobile.png'),
     eyebrow: 'Find Your Location',
     title: 'Find Your Local Alas Technician',
-    description: 'Enter your ZIP code to connect with the right local ALAS service team.',
+    description: 'ZIP code routes you to the right franchise owner automatically via GHL ZIP router.',
     placeholder: 'Enter ZIP code',
     action: 'Find Service',
     cities: ['Plano', 'Dallas', 'Frisco', 'Allen', 'McKinney', 'Garland', 'Mesquite', 'All 50+ Cities ->'],
@@ -221,31 +223,37 @@ export const homePageData = {
     items: [
       {
         question: 'How Long Does A Service Take ?',
+        mobileQuestion: 'How Long Does A Service ?',
         answer:
-          'Most diagnostic visits take about 30 to 60 minutes. If the needed parts are available, many common appliance repairs can be completed during the same appointment.',
+          'We denounce with righteous indignation and dislike men who are so major beguiled and demoralized by the charms of pleasure of the moment blinded by desire ante odio dignissim quam vitae pulvinar turpis. Generator tend to repeat predefined chunks necessary making this internet.',
       },
       {
         question: 'How Can I Become A Member ?',
+        mobileQuestion: 'How Can I Become A Member ?',
         answer:
           'Choose the membership plan that fits your home or business, submit your contact details, and our support team will confirm your coverage, benefits, and first available service window.',
       },
       {
-        question: 'What Payment Methods Do You Support ?',
+        question: 'What Payment Gateway You Support ?',
+        mobileQuestion: 'How Can I Become A Member ?',
         answer:
           'We support secure card payments and common online payment methods for scheduled repairs, membership plans, and approved service invoices.',
       },
       {
-        question: 'How Can I Cancel Or Reschedule My Request ?',
+        question: 'How Can I Cancel My Request ?',
+        mobileQuestion: 'What Payment Gateway ?',
         answer:
           'You can cancel or reschedule a service request by contacting support before the technician is dispatched. Our team will update your appointment and confirm the change.',
       },
       {
-        question: 'Do Protection Plans Have Cancellation Terms ?',
+        question: 'How Can I Cancel My Request ?',
+        mobileQuestion: 'How Can I Cancel My Request ?',
         answer:
           'For membership-related requests, cancellation terms depend on the selected plan. Contact our team with your account details and we will review the available options.',
       },
       {
-        question: 'What Should I Do For Urgent Repairs ?',
+        question: 'How Can I Cancel My Request ?',
+        mobileQuestion: 'How Can I Cancel My Request ?',
         answer:
           'If the request is urgent, call the service line directly so the dispatch team can stop or adjust the appointment as quickly as possible.',
       },

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { HomePageData } from '../../data/homePageData';
-import { ChevronDown } from '../ui/Icons';
 import { Footer } from './Footer';
 
 type FaqFooterProps = {
@@ -12,50 +11,72 @@ export function FaqFooter({ faq, footer }: FaqFooterProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-[#F4F6F8] pb-[100px]">
-      <div className="mx-auto max-w-[1440px] px-4 pt-[100px] md:px-0">
-        <h2 className="text-center text-[32px] font-bold leading-[1.4] text-[#090A0A] md:text-[42px]">{faq.title}</h2>
-        <div className="mx-auto mt-10 flex flex-col gap-[30px] md:mt-[40px] md:h-[722.19px] md:w-[1280px]">
-          {faq.items.map((item, index) => (
-            <article
-              key={`${item.question}-${index}`}
-              className="overflow-hidden rounded-[12px] bg-white md:rounded-r-[50px] md:rounded-bl-[12px] md:rounded-tl-[12px]"
-            >
-              <button
-                aria-expanded={openIndex === index}
-                className="flex h-[80px] w-full items-center gap-5 px-5 text-left md:px-5"
-                type="button"
-                onClick={() => setOpenIndex((current) => (current === index ? null : index))}
-              >
-                <span className="inline-flex size-[45px] shrink-0 items-center justify-center rounded-full bg-[#00478F] text-[24px] font-normal leading-none text-white">
-                  ?
-                </span>
-                <span
-                  className={`flex-1 text-[20px] font-bold leading-[1.6] ${
-                    openIndex === index ? 'text-[#00478F]' : 'text-[#090A0A]'
-                  }`}
+    <section className="bg-[#F4F6F8]">
+      <div className="mx-auto h-[874.19px] w-full max-w-[1440px] px-5 py-[50px] xl:h-[1021.19px] xl:px-20 xl:py-[100px]">
+        <div className="flex w-full flex-col items-center gap-[33px] xl:gap-10">
+          <h2 className="w-full text-center text-[32px] font-bold leading-[1.6] text-[#090A0A] xl:text-[42px] xl:leading-[1.4]">
+            {faq.title}
+          </h2>
+
+          <div className="flex w-full flex-col items-start gap-4 xl:gap-[30px]">
+            {faq.items.map((item, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <article
+                  key={`${item.question}-${index}`}
+                  className={`w-full overflow-hidden rounded-bl-[12px] rounded-br-[50px] rounded-tl-[50px] rounded-tr-[50px] bg-white ${index === 5 ? 'max-xl:hidden' : ''}`}
                 >
-                  {item.question}
-                </span>
-                <ChevronDown className={`size-6 text-[#00478F] transition-transform ${openIndex === index ? 'rotate-180' : ''}`} />
-              </button>
-              <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                  openIndex === index && item.answer ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                }`}
-              >
-                <div className="min-h-0 overflow-hidden">
-                  <div className="border-t border-dashed border-[#00478F] px-5 pb-5 pt-[21px] md:px-[80px] md:pb-[25px]">
-                    <p className="text-[16px] font-semibold leading-[1.6] text-[#202124]">{item.answer}</p>
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    className={`flex w-full items-center px-5 text-left transition-[height] duration-300 ${
+                      isOpen ? 'h-[78px]' : 'h-[58px] xl:h-[77px]'
+                    }`}
+                    onClick={() => setOpenIndex((current) => (current === index ? null : index))}
+                  >
+                    <span className="mr-[15px] hidden size-[45px] shrink-0 items-center justify-center rounded-full bg-[#00478F] text-[20px] font-normal leading-[45px] text-white xl:inline-flex">
+                      ?
+                    </span>
+                    <span className={`min-w-0 flex-1 whitespace-nowrap text-[16px] font-semibold leading-[1.6] xl:text-[20px] xl:font-bold ${isOpen ? 'text-[#00478F]' : 'text-[#090A0A]'}`}>
+                      <span className="xl:hidden">{item.mobileQuestion}</span>
+                      <span className="hidden xl:inline">{item.question}</span>
+                    </span>
+                    <Chevron open={isOpen} />
+                  </button>
+
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <div className="px-5 pb-[15.995px] pt-[15.195px] xl:border-t xl:border-dashed xl:border-[#00478F]">
+                        <p className="text-[16px] font-semibold leading-[1.6] text-[#17181A]">{item.answer}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </article>
-          ))}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {footer ? <Footer data={footer} /> : null}
     </section>
+  );
+}
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={`ml-4 size-6 shrink-0 text-[#00478F] transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path d="m8 10 4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

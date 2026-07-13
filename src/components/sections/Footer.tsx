@@ -18,9 +18,9 @@ export function Footer({ data }: FooterProps) {
   const companyLinks = data.company.map((item) => ({
     label: item,
     href: item.includes('Locations')
-      ? '/locations/samsung-refrigerator-error-code-22e'
+      ? '/guides/samsung-refrigerator-error-code-22e'
       : item.includes('Protection')
-        ? '#plans'
+        ? '/brands/samsung-appliance-repair'
         : item.includes('About')
           ? '/about'
           : '#services',

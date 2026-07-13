@@ -24,9 +24,9 @@ export function Header({ data }: HeaderProps) {
   const linkTargets: Record<string, string> = {
     Services: '/services/appliance-repair',
     Brands: '/services/hvac-repair',
-    'Protection Plans': '/#plans',
-    'Service areas': '/#locations',
-    'About us': '/#about',
+    'Protection Plans': '/protection-plans',
+    'Service areas': '/guides/samsung-refrigerator-error-codes',
+    'About us': '/about',
   };
 
   return (
@@ -117,8 +117,8 @@ export function Header({ data }: HeaderProps) {
               {[
                 ['Services', '/services/appliance-repair'],
                 ['Brands', '/services/hvac-repair'],
-                ['Membership', '/#plans'],
-                ['Service areas', '/#locations'],
+                ['Protection Plans', '/protection-plans'],
+                ['Service areas', '/guides/samsung-refrigerator-error-codes'],
               ].map(([label, href]) => (
                 <a
                   key={label}

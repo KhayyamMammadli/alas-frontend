@@ -13,6 +13,10 @@ import { SeoTextArea } from './components/sections/SeoTextArea';
 import { FaqFooter } from './components/sections/FaqFooter';
 import { ServicesPage } from './pages/ServicesPage';
 import { HvacPage } from './pages/HvacPage';
+import { RefrigerationPage } from './pages/RefrigerationPage';
+import { AboutPage } from './pages/AboutPage';
+import { SamsungRefrigeratorErrorCodesPage } from './pages/SamsungRefrigeratorErrorCodesPage';
+import { SamsungRefrigeratorError22EPage } from './pages/SamsungRefrigeratorError22EPage';
 
 export default function App() {
   return (
@@ -39,6 +43,10 @@ export default function App() {
 
           <Route path="/services/appliance-repair" element={<ServicesPage />} />
           <Route path="/services/hvac-repair" element={<HvacPage />} />
+          <Route path="/protection-plans" element={<RefrigerationPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/guides/samsung-refrigerator-error-codes" element={<SamsungRefrigeratorErrorCodesPage />} />
+          <Route path="/locations/samsung-refrigerator-error-code-22e" element={<SamsungRefrigeratorError22EPage />} />
         </Routes>
       </SiteLayout>
     </BrowserRouter>

@@ -24,6 +24,14 @@ const routeMeta: Record<string, { title: string; description: string }> = {
     title: 'About ALAS Appliance Services | Licensed DFW Technicians',
     description: 'Learn about ALAS Appliance Services, our licensed technicians, service standards, warranty, and commitment to DFW communities.',
   },
+  '/franchise-opportunities': {
+    title: 'Membership Plans for Homes & Businesses | ALAS',
+    description: 'Explore ALAS residential and commercial membership plans for priority scheduling, preventive maintenance, and dedicated support.',
+  },
+  '/careers': {
+    title: 'Commercial Protection Plans in Texas | ALAS',
+    description: 'Protect commercial appliances, HVAC, and ventilation systems with one ALAS monthly service plan and 24/7 emergency support.',
+  },
   '/brands/samsung-appliance-repair': {
     title: 'Samsung Appliance Repair Services in Plano, TX | ALAS',
     description: 'Fast Samsung refrigerator, washer, dryer, and appliance repair for residential and commercial customers, with same-day service and a 90-day warranty.',

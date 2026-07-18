@@ -13,7 +13,13 @@ const socialLinks = [
 export function Footer({ data }: FooterProps) {
   const serviceLinks = data.services.map((item) => ({
     label: item,
-    href: item.includes('24/7') ? '#schedule' : '#appliance-repair',
+    href: item.includes('Refrigerator')
+      ? '/services/refrigerator-repair'
+      : item.includes('Washer')
+        ? '/services/washer-repair'
+      : item.includes('24/7')
+        ? '#schedule'
+        : '#appliance-repair',
   }));
   const companyLinks = data.company.map((item) => ({
     label: item,
@@ -23,6 +29,14 @@ export function Footer({ data }: FooterProps) {
         ? '/brands/samsung-appliance-repair'
         : item.includes('About')
           ? '/about'
+          : item.includes('Franchise')
+            ? '/franchise-opportunities'
+            : item.includes('Careers')
+              ? '/careers'
+              : item.includes('Blog')
+                ? '/blog-guides'
+                : item.includes('Contact')
+                  ? '/contact'
           : '#services',
   }));
 

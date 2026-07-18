@@ -12,6 +12,12 @@ const AboutPage = lazy(() => import('./pages/AboutPage').then((module) => ({ def
 const SamsungErrorCodesPage = lazy(() => import('./pages/SamsungErrorCodesPage').then((module) => ({ default: module.SamsungErrorCodesPage })));
 const SamsungError22EPage = lazy(() => import('./pages/SamsungError22EPage').then((module) => ({ default: module.SamsungError22EPage })));
 const SamsungAppliancePage = lazy(() => import('./pages/SamsungAppliancePage').then((module) => ({ default: module.SamsungAppliancePage })));
+const FranchiseOpportunitiesPage = lazy(() => import('./pages/FranchiseOpportunitiesPage').then((module) => ({ default: module.FranchiseOpportunitiesPage })));
+const CareersPage = lazy(() => import('./pages/CareersPage').then((module) => ({ default: module.CareersPage })));
+const BlogGuidesPage = lazy(() => import('./pages/BlogGuidesPage').then((module) => ({ default: module.BlogGuidesPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then((module) => ({ default: module.ContactPage })));
+const RefrigeratorRepairPage = lazy(() => import('./pages/RefrigeratorRepairPage').then((module) => ({ default: module.RefrigeratorRepairPage })));
+const WasherRepairPage = lazy(() => import('./pages/WasherRepairPage').then((module) => ({ default: module.WasherRepairPage })));
 
 export default function App() {
   return (
@@ -22,9 +28,15 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services/appliance-repair" element={<ServicesPage />} />
+            <Route path="/services/refrigerator-repair" element={<RefrigeratorRepairPage />} />
+            <Route path="/services/washer-repair" element={<WasherRepairPage />} />
             <Route path="/services/hvac-repair" element={<HvacPage />} />
             <Route path="/protection-plans" element={<RefrigerationPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/franchise-opportunities" element={<FranchiseOpportunitiesPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/blog-guides" element={<BlogGuidesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/brands/samsung-appliance-repair" element={<SamsungAppliancePage />} />
             <Route path="/guides/samsung-refrigerator-error-codes" element={<SamsungErrorCodesPage />} />
             <Route path="/guides/samsung-refrigerator-error-code-22e" element={<SamsungError22EPage />} />

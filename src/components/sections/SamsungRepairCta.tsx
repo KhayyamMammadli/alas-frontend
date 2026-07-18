@@ -1,6 +1,10 @@
 const benefits = ['Same-Day Service', '90-Day Warranty', 'Licensed & Insured', 'Upfront Pricing'] as const;
 
-export function SamsungRepairCta() {
+type SamsungRepairCtaProps = {
+  title?: string;
+};
+
+export function SamsungRepairCta({ title = 'Need Help Fixing Your Samsung Refrigerator?' }: SamsungRepairCtaProps) {
   return (
     <section className="bg-[#F4F6F8] xl:h-[505px] xl:px-20 xl:py-[45px]">
       <div className="mx-auto hidden h-[415px] w-full max-w-[1280px] flex-col items-center justify-center rounded-[49px] bg-[linear-gradient(157.43deg,#002756_0%,#0E55B1_50%,rgba(56,132,232,0.71)_100%)] px-[105px] py-16 xl:flex">
@@ -8,7 +12,7 @@ export function SamsungRepairCta() {
 
         <div className="mt-[10px] flex w-[1112px] flex-col items-center gap-[47px]">
           <h2 className="h-12 whitespace-nowrap text-center text-[40px] font-extrabold leading-[48px] text-white">
-            Need Help Fixing Your Samsung Refrigerator?
+            {title}
           </h2>
 
           <ul className="flex h-8 items-start gap-4">
@@ -36,7 +40,7 @@ export function SamsungRepairCta() {
         <div className="flex w-full max-w-[345px] flex-col items-center gap-[47px]">
           <div className="flex w-full flex-col items-start gap-7">
             <p className="text-center text-[11px] font-bold uppercase leading-[18.15px] tracking-[2px] text-white">Ready When You Are</p>
-            <h2 className="w-full text-[40px] font-extrabold leading-[48px] text-white">Need Samsung Appliance Repair?</h2>
+            <h2 className="w-full text-[40px] font-extrabold leading-[48px] text-white">{title}</h2>
             <ul className="flex w-full flex-col items-start gap-4">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex h-8 items-center gap-3 text-[14px] font-semibold leading-5 text-white/90">

@@ -18,6 +18,7 @@ const BlogGuidesPage = lazy(() => import('./pages/BlogGuidesPage').then((module)
 const ContactPage = lazy(() => import('./pages/ContactPage').then((module) => ({ default: module.ContactPage })));
 const RefrigeratorRepairPage = lazy(() => import('./pages/RefrigeratorRepairPage').then((module) => ({ default: module.RefrigeratorRepairPage })));
 const WasherRepairPage = lazy(() => import('./pages/WasherRepairPage').then((module) => ({ default: module.WasherRepairPage })));
+const CommercialWalkInCoolerPage = lazy(() => import('./pages/CommercialWalkInCoolerPage').then((module) => ({ default: module.CommercialWalkInCoolerPage })));
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/services/appliance-repair" element={<ServicesPage />} />
             <Route path="/services/refrigerator-repair" element={<RefrigeratorRepairPage />} />
             <Route path="/services/washer-repair" element={<WasherRepairPage />} />
+            <Route path="/services/commercial-walk-in-cooler-repair" element={<CommercialWalkInCoolerPage />} />
             <Route path="/services/hvac-repair" element={<HvacPage />} />
             <Route path="/protection-plans" element={<RefrigerationPage />} />
             <Route path="/about" element={<AboutPage />} />
